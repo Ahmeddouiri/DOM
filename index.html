@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" id="item1" value="19.99">
+        <div class="card mb-3" >
+          <img src="item1.jpg" height="400px" class="card-img-top" alt="Item 1" >
+          <div class="card-body">
+            <h5 class="card-title">Item 1</h5>
+            <p class="card-text">$19.99</p>
+            <button class="btn btn-primary" id="bnt1">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"id="item2" value="29.99">
+        <div class="card mb-3">
+          <img src="item2.jpg" height="400px" class="card-img-top" alt="Item 2">
+          <div class="card-body">
+            <h5 class="card-title">Item 2</h5>
+            <p class="card-text">$29.99</p>
+            <button class="btn btn-primary" id="bnt2" >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" id="item3" value="24.99">
+        <div class="card mb-3">
+          <img src="item3.jpg" height="400px" class="card-img-top" alt="Item 3">
+          <div class="card-body">
+            <h5 class="card-title">Item 3</h5>
+            <p class="card-text">$24.99</p>
+            <button class="btn btn-primary" id="bnt3" >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pannier">
+  
+  </div>
+<script>
+var sum = 0 ;
+var btn1 = document.getElementById('bnt1');
+
+   btn1.addEventListener("click", function() {
+   var check_article = document.getElementById('item1');
+ var check_articleid = check_article.getAttribute('id');
+     // console.log(check_articleid);
+
+      var check_article_P = check_article.getAttribute('value');
+	  sum = sum + parseInt(check_article_P)
+	  // console.log(check_article_P)
+	  let elem = document.createElement("p");
+let node = document.createTextNode('  Ajout nouveau produit: ' + check_articleid + ' price  : $' + check_article_P + ' ***  Montant Total :  $'+ sum+'  ***  ');
+elem.appendChild(node);
+let element = document.getElementById("pannier");
+element.appendChild(elem);
+	  
+	 
+	  
+  });
+
+var btn2 = document.getElementById('bnt2');
+
+   btn2.addEventListener("click", function() {
+   var check_article = document.getElementById('item2');
+ var check_articleid = check_article.getAttribute('id');
+    //  console.log(check_articleid);
+
+      var check_article_P = check_article.getAttribute('value');
+      sum = sum + parseInt(check_article_P);
+	  // console.log(check_article_P)
+	  let elem = document.createElement("p");
+let node = document.createTextNode('  Ajout nouveau produit: ' + check_articleid + ' price  : $' + check_article_P + ' ***  Montant Total :  $'+ sum+'  ***  ');
+elem.appendChild(node);
+let element = document.getElementById("pannier");
+element.appendChild(elem);
+	  
+  });
+
+var btn3 = document.getElementById('bnt3');
+
+   btn3.addEventListener("click", function() {
+   var check_article = document.getElementById('item3');
+ var check_articleid = check_article.getAttribute('id');
+     // console.log(check_articleid);
+
+      var check_article_P = check_article.getAttribute('value');
+      sum = sum + parseInt(check_article_P)
+	    // console.log(check_article_P)
+	  let elem = document.createElement("p");
+let node = document.createTextNode('  Ajout nouveau produit: ' + check_articleid + ' price  : $' + check_article_P + ' ***  Montant Total :  $'+ sum+'  ***  ');
+elem.appendChild(node);
+let element = document.getElementById("pannier");
+element.appendChild(elem);
+  });
+
+</script>
+  <!-- Link to Bootstrap JS and Popper.js (required for some Bootstrap features) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
